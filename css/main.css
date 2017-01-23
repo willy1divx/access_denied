@@ -1,0 +1,32 @@
+body {
+	background-color: yellow;
+}
+
+
+
+.one {
+	margin-top: 150px;
+	text-align: center;
+	height: 200px;
+	width: 200px;
+	background-color: yellow;
+	margin-left: 40%;
+}
+
+.two {
+	margin-top: 0px;
+	text-align: center;
+	height: 200px;
+	width: 200px;
+	background-color: yellow;
+	margin-left: 40%;
+}
+
+
+
+h1 {
+	margin-top: auto;
+}
+
+
+
