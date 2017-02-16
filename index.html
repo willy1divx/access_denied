@@ -1,23 +1,57 @@
 <!Doctype html>
- <html>
-	<head>
-		<title>Jquery template</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+ <html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>comment app</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <!-- font -->
+	   		 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+	    
+	     <!-- Font Awesome -->
+	       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	      <!-- Author Custom CSS 
+	      <link rel="stylesheet" href="style.css"> -->
+	      <!-- jquery -->
+	      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <!-- Latest compiled and minified JavaScript -->
+	   	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
-	<body class="yellow">
-		<div class="one">
-		<h1>
-		USER ID<input type='text' id="userName" name="USER ID"/>
-		<br>
-		PASSWORD<input type='text' id="password" name="PASSWORD"/>
-		<br>
-		<button onClick="getAnswer()">submit</button>
-		</h1>
+	<body class="container yellow">
+		<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4 text-center one">
+			<h1><input class="col-md-12" placeholder="User I.D." type='text' id="userName" name="USER ID" size="10"/>
+			<br>
+			<br>
+			<input class="col-md-12" placeholder="Password" type='text' id="password" name="PASSWORD" size="10"/>
+			<br>
+			<button class="col-md-6 btn-lg btn-warning" onClick="getAnswer()">submit login</button>
+			<button class="col-md-6 btn-lg btn-warning" onClick="createNewAccountBox()">create account</button>
+			</h1>
 		</div>
-		<div class="two"><h1 id="access" ></h1></div>
+		<div class="col-md-4"></div>
+		</div>
 
+
+	<div class="row">
+		<div class="col-md-4 box"></div>
+		<div class="col-md-4" id="createNewAccount"style="background-color:blue">
+			<br>
+			<input class="col-md-12" placeholder="new userID" type='text' id="userName1" name="PASSWORD" size="10"/>
+			<br>
+			<br>
+			<input class="col-md-12" placeholder="new Password" type='text' id="password1" name="PASSWORD" size="10"/>
+			<button class="col-md-12 btn-lg btn-warning" onClick="getAnswer1()">submit</button>
+		</div>
+		<div class="col-md-4 box" id="box"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 box" id="box"></div>
+		<div class="col-md-4 box" id="box"><h1 id="access"></h1></div>
+		<div class="col-md-4 box" id="box"></div>
+	</div>
 		
 		
 
