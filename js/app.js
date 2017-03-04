@@ -59,10 +59,10 @@ function checkIfMember(userId, password){
 function createNewAccount(userId, password){
 	console.log(arrUsers[0]['userId']);
 	document.getElementById('access').innerHTML = " ";
-	document.querySelector('.yellow').style.backgroundColor = "yellow";
-	document.querySelector('.box').style.backgroundColor = "yellow";
-	document.querySelector('#access').style.backgroundColor = "yellow";
-	document.querySelector('#box').style.backgroundColor = "yellow";
+	document.querySelector('.yellow').style.backgroundColor = "#7aadff";
+	document.querySelector('.box').style.backgroundColor = "#7aadff";
+	document.querySelector('#access').style.backgroundColor = "#7aadff";
+	document.querySelector('#box').style.backgroundColor = "#7aadff";
 	document.querySelector('#createNewAccount').style.opacity = "0";
 	for( var i = 0 ; i < arrUsers.length ; i++){
 		if (arrUsers[i]['userId'] == userId){
@@ -90,6 +90,7 @@ function createNewAccount(userId, password){
 		userIdx = userId + a;
 	    userIdx = new Person(userId, password);
 		arrUsers.push(userIdx);
+		
 	}
 }
 
