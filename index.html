@@ -1,10 +1,12 @@
 <!Doctype html>
- <html lang="en">
+ <html lang="en" ng-app="myApp">
 		<head>
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>comment app</title>
+			<title>Access Denied app</title>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<!-- AngulaeJs cdn -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	    <!-- font -->
 	   		 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 	    
@@ -18,18 +20,26 @@
 	   	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
-	<body class="container yellow">
+	<body class="container yellow" ng-controller="myValues">
 		<div class="row">
 		<div class="col-md-4"></div>
-		<div class="col-md-4 text-center one">
-			<h1><input class="col-md-12" placeholder="User I.D." type='text' id="userName" name="USER ID" size="10"/>
+		<div class="col-md-4 text-center one" id="boxes">
+			<h1><input class="col-md-12" placeholder="User I.D." type='text' id="userName" name="USER ID" size="10" style="margin-top: 25px;"/>
 			<br>
-			<br>
-			<input class="col-md-12" placeholder="Password" type='text' id="password" name="PASSWORD" size="10"/>
-			<br>
-			<button class="col-md-6 btn-lg btn-warning" onClick="getAnswer()">submit login</button>
-			<button class="col-md-6 btn-lg btn-warning" onClick="createNewAccountBox()">create account</button>
+			<input class="col-md-12" placeholder="Password" ng-show="showpassword" type='password' id="password" ng-model="password" name="PASSWORD" size="10" style="margin-top: 10px;"/>
+			<input class="col-md-12" placeholder="Password"  ng-hide="showpassword " type='text' id="password" ng-model="password" name="PASSWORD" size="10"style="margin-top: 10px;"/>
+			<div class="row">
+			<div class="col-md-1"></div>	
+			<button class="col-md-4 btn-sm btn-primary" onClick="getAnswer()">submit login</button>
+			
+			<div class="col-md-1"></div>
+			<button class="col-md-4 btn-sm btn-primary" onClick="createNewAccountBox()">create account</button>
+			<div class="col-md-2"></div>
+			</div>
 			</h1>
+			
+			<h3><input type="checkbox" ng-model="showpassword" ng-checked="false">
+			hide password</h3>
 		</div>
 		<div class="col-md-4"></div>
 		</div>
@@ -37,19 +47,20 @@
 
 	<div class="row">
 		<div class="col-md-4 box"></div>
-		<div class="col-md-4" id="createNewAccount"style="background-color:blue">
+		<div class="col-md-4" id="createNewAccount"style="background-color: white">
 			<br>
-			<input class="col-md-12" placeholder="new userID" type='text' id="userName1" name="PASSWORD" size="10"/>
+			<input class="col-md-12" placeholder="new userID" type='text' id="userName1" name="PASSWORD" size="10" />
 			<br>
 			<br>
-			<input class="col-md-12" placeholder="new Password" type='text' id="password1" name="PASSWORD" size="10"/>
-			<button class="col-md-12 btn-lg btn-warning" onClick="getAnswer1()">submit</button>
+			<input class="col-md-12" ng-show="showpassword" placeholder="new Password" ng-model="password" type='password' id="password1" name="PASSWORD" size="10"/>
+			<input class="col-md-12" ng-hide="showpassword" placeholder="new Password" ng-model="password" type='text' id="password1" name="PASSWORD" size="10"/>
+			<button class="col-md-12 btn-lg btn-primary" onClick="getAnswer1()">submit</button>
 		</div>
 		<div class="col-md-4 box" id="box"></div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 box" id="box"></div>
-		<div class="col-md-4 box" id="box"><h1 id="access"></h1></div>
+		<div class="col-md-4 box" id="box"><h1 id="access" ng-model="message">{{message}}</h1></div>
 		<div class="col-md-4 box" id="box"></div>
 	</div>
 		

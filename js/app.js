@@ -1,8 +1,24 @@
+	var app = angular.module('myApp',[]);
+		var hidePassword;
+		var message;
+
+	app.controller('myValues', function($scope){
+		$scope.hidePassword;
+		$scope.message = message;
+		$scope.password = password;
+		if ($scope.hidePassword === true) {
+			$scope.password = "";
+		} else {
+			$scope.password = "";
+		}
+		
+	});
+
 	arrUsers = [{userId:'william', password:"dorsey"}];
 	var x = 0;
 	var open = 'no';
 
-function getAnswer(){
+function getAnswer(password){
 		var userId = document.getElementById('userName').value;
 		var password = document.getElementById('password').value;
 		checkIfMember(userId, password);
@@ -58,6 +74,15 @@ function createNewAccount(userId, password){
 		document.getElementById('access').innerHTML = " PASSWORD IS TOO SHORT (must be atleast 8 characters)";
 		ErrorMsg = 1;
 	}
+
+	var resultLetter = password.search(/[A-Z]/);
+	var resultNumber = password.search(/\d/);
+	console.log(resultLetter+ " "+resultNumber);
+	if (resultLetter === -1 || resultNumber === -1){
+		document.getElementById('access').innerHTML = " PASSWORD MUST HAVE 1 CAPITAL LETTER AND 1 NUMBER";
+		ErrorMsg = 1;
+	}
+
 
 	if (ErrorMsg != 1){
 		x = x + 1
